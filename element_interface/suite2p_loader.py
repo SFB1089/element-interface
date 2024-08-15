@@ -145,7 +145,7 @@ class PlaneSuite2p:
                     self.fpath
                 )
             )
-        self.curation_time = datetime.fromtimestamp(iscell_fp.stat().st_ctime)
+        self.curation_time = datetime.fromtimestamp(iscell_fp.stat().st_mtime) # TR24: changed from st_ctime to use modification time - not creation time
 
         # -- Initialize attributes --
         for s2p_type in _suite2p_ftypes:
